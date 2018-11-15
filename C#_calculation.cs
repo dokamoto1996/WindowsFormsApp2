@@ -181,7 +181,7 @@ namespace WindowsFormsApp2
                 dot = false;
             }
         }
-/*****************************＝をクリック****************************/
+/*****************************＝をクリック*****************************/
         private void button17_Click(object sender, EventArgs e)
         {
             if (inputnum == null)//=だけが最初に連続で押された時
