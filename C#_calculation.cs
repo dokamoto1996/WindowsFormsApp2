@@ -15,26 +15,27 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
-            textBox1.Text = "0";
         }
 
-        string inputnum;
-        string leftnum;
-        string rightnum;
-        string ope;
-        float left;
-        float right;
-        float result;
-        bool minus = false; //フラグは，演算子，＝，C，CE,エラー表示がクリック，表示されたらfalseへ
-        bool dot = false;
-        bool zero = false;
+        string  inputnum;
+        string  leftnum;
+        string  rightnum;
+        string  ope;
+        float   left;
+        float   right;
+        float   result;
+        bool    minus = false; /*フラグは，演算子，＝，C，CE,エラー表示がクリック，表示されたらfalseへ*/
+        bool    dot = false;
+        bool    zero = false;
 
-/********数字，文字をクリック********************************/
+        textBox1.Text = "0";
+/*********************************************数字，文字をクリック********************************/
         private void Form1_Click(object sender, EventArgs e)
-        {   //-記号，”．”または”0”がクリックされた時，文字の先頭に着き，連続で表示されない．
+        {
+            /*-記号，”．”または”0”がクリックされた時，文字の先頭に着き，連続で表示されない．*/
             if ((((Button)sender).Text == "±") || (((Button)sender).Text == ".") || (((Button)sender).Text == "0"))
             {
-                if (((Button)sender).Text == "±")//―記号がクリックされた時，文字の先頭に着き，連続で表示されない．
+                if (((Button)sender).Text == "±")           /*―記号がクリックされた時，文字の先頭に着き，連続で表示されない．*/
                 {
                     if (minus)
                     {
@@ -48,9 +49,9 @@ namespace WindowsFormsApp2
                     }
                 }
 
-                if (((Button)sender).Text == ".")//"."記号がクリックされた時，文字の先頭で表示されず，連続で表示されない．
+                if (((Button)sender).Text == ".")           /*"."記号がクリックされた時，文字の先頭で表示されず，連続で表示されない．*/
                 {
-                    if (inputnum == null)//何も数値がクリックされない状態で，”．”が押された時
+                    if (inputnum == null)                   /*何も数値がクリックされない状態で，”．”が押された時*/
                     {
                         dot = true;
                         return;
