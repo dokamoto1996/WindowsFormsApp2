@@ -46,15 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\C#_calculation.cs">
+    <Compile Include="..\C#_calculation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\C#_calculation.Designer.cs">
+    <Compile Include="..\C#_calculation.Designer.cs">
       <DependentUpon>C#_calculation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="..\..\C#_calculation.resx">
+    <EmbeddedResource Include="..\C#_calculation.resx">
       <DependentUpon>C#_calculation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
