@@ -106,10 +106,11 @@ namespace WindowsFormsApp2
                     return;
                 }
 
-                rightnum = textBox1.Text;               /*右辺にテキストを保存*/
+                //rightnum = textBox1.Text;               /*右辺にテキストを保存*/
+                 rightnum = inputnum;                      /*右辺に数字を保存*/
 
-                                                        /*文字列から数値へ変換,オーバーフロー処理*/
-                                                        /*変換成功で，outの変数へ，失敗でelseの処理*/
+                /*文字列から数値へ変換,オーバーフロー処理*/
+                /*変換成功で，outの変数へ，失敗でelseの処理*/
                 if (float.TryParse(leftnum, out left) && (float.TryParse(rightnum, out right)))  
                 {
                 }
@@ -166,8 +167,24 @@ namespace WindowsFormsApp2
                         }
                         break;
                 }
+
+                if (((-3.402823E+38 > result) || (result > 3.402823E+38)))
+                {
+                    MessageBox.Show("表示できる桁数を超えています．", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox1.Text = "0";
+                    inputnum = null;
+                    rightnum = null;
+                    leftnum = null;
+                    ope = null;
+                    right = 0;
+                    left = 0;
+                    result = 0;
+                    minus = false;
+                    dot = false;
+                    return;
+                }
                 textBox1.Text = result.ToString();      /*数値から文字列へ*/
-                leftnum = textBox1.Text;                /*演算結果のテキストをを左辺に保存*/
+                leftnum = result.ToString();               /*演算結果のテキストをを左辺に保存*/
                 inputnum = null;                        /*入力値を初期化*/
                 ope = ((Button)sender).Text;            /*演算子の保存*/
                 minus = false;
@@ -194,8 +211,8 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            rightnum = textBox1.Text;                   /*右辺にテキストを保存*/
-
+            //rightnum = textBox1.Text;                   /*右辺にテキストを保存*/
+            rightnum = inputnum;
             /***文字列から数値へ変換***/                /*変換成功で，outの変数へ，失敗でelseの処理*/
             if ( (float.TryParse(leftnum, out left)) && (float.TryParse(rightnum, out right)) )
             {                
@@ -272,8 +289,8 @@ namespace WindowsFormsApp2
             {
                 textBox1.Text = result.ToString();             /*数値から文字列へ*/
             }
-            leftnum = textBox1.Text;                           /*演算結果のテキストをを左辺に保存*/
-            inputnum = null;                                   /*入力値を初期化*/
+            leftnum = result.ToString();                       /*演算結果を左辺に保存*/
+            //inputnum = null;                                   /*入力値を初期化*/
             minus = false;
             dot = false;
         }

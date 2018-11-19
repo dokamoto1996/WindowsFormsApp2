@@ -1,8 +1,0 @@
-﻿リポジトリを開いています:
-C:\Users\user\Documents\Visual Studio 2017\Project\WindowsFormsApp2
-master をプッシュしています
-リポジトリを開いています:
-C:\Users\user\Documents\Visual Studio 2017\Project\WindowsFormsApp2
-例外処理追加 からチェックアウトしました
-例外処理追加 をプッシュしています
-refs/heads/master からチェックアウトしました
